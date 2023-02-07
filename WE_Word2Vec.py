@@ -26,10 +26,11 @@ for label in labels:
             texts.append(f.read())
             y.append(label_to_idx[label])
 
-model = gensim.models.Word2Vec(texts, size=100, window=5, min_count=5, workers=4)
+model = gensim.models.Word2Vec(texts, vector_size=100, window=5, min_count=5, workers=4) # sg=0 sg=1 sg: The training algorithm, either CBOW(0) or skip gram(1). The default training algorithm is CBOW.
 
 # Get the vocabulary and embedding matrix from the Word2Vec model
-vocabulary = model.wv.vocab
+# vocabulary = model.wv.vocab
+vocabulary = list(model.wv.index_to_key)
 embedding_matrix = model.wv.vectors
 
 # Tokenize the texts and pad the sequences to the same length
