@@ -59,3 +59,18 @@ test_loss, test_accuracy = model.evaluate(x_test, y_test, verbose=2)
 print("Test loss:", test_loss)
 print("Test accuracy:", test_accuracy)
 print("Dataset N = ", i)
+
+# Epoch 1/5
+# 12819/12819 [==============================] - 2055s 160ms/step - loss: 0.6667 - accuracy: 0.7847
+# Epoch 2/5
+# 12819/12819 [==============================] - 1951s 152ms/step - loss: 0.3944 - accuracy: 0.8598
+# Epoch 3/5
+# 12819/12819 [==============================] - 1948s 152ms/step - loss: 0.3469 - accuracy: 0.8753
+# Epoch 4/5
+# 12819/12819 [==============================] - 1900s 148ms/step - loss: 0.3187 - accuracy: 0.8844
+# Epoch 5/5
+# 12819/12819 [==============================] - 1889s 147ms/step - loss: 0.2978 - accuracy: 0.8916
+# 3205/3205 - 137s - loss: 0.3681 - accuracy: 0.8706 - 137s/epoch - 43ms/step
+# Test loss: 0.3680633008480072
+# Test accuracy: 0.8706387281417847
+# Dataset N =  512750
