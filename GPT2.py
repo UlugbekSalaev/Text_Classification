@@ -20,6 +20,7 @@ for label in labels:
             texts.append(f.read())
             y.append(label_to_idx[label])
 
+print("Start training")
 # Convert the labels into one-hot encodings
 num_classes = 15
 y = tf.keras.utils.to_categorical(y, num_classes)

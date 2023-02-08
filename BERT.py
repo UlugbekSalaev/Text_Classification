@@ -26,6 +26,7 @@ for label in labels:
             texts.append(f.read())
             y.append(label_to_idx[label])
 
+print("Start training")
 # Convert the labels into one-hot encodings
 num_classes = 15
 y = to_categorical(y, num_classes)
@@ -35,7 +36,7 @@ x_train, x_test, y_train, y_test = train_test_split(texts, y, test_size=0.2, ran
 
 # Tokenize the texts using the BERT tokenizer
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-x_train = tokenizer(x_train, padding=True, return_tensors="tf")
+x_train = tokenizer(x_train, padding=True, return_tensors="tf", truncation=True)
 x_test = tokenizer(x_test, padding=True, return_tensors="tf")
 
 # Create the BERT model for sequence classification
@@ -45,6 +46,7 @@ model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_l
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 # Train the model
+print("Train model")
 model.fit(x_train, y_train, epochs=5, batch_size=32)
 
 # Evaluate the model on the test data
