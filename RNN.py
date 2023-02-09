@@ -54,7 +54,8 @@ model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accur
 history = model.fit(x, y, epochs=10, validation_split=0.2, verbose=2)
 
 # Make predictions on the test set
-y_pred = model.predict(x_test)
+# y_pred = model.predict(x_test)
+y_pred = np.where(y_pred > 0.5, 1, 0)
 
 # Convert the predicted probabilities to class labels
 y_pred = [1 if p > 0.5 else 0 for p in y_pred]

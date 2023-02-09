@@ -58,7 +58,8 @@ model.fit(x_train, y_train, epochs=5, batch_size=32)
 y_pred = model.predict(x_test)
 
 # Convert the predicted probabilities to class labels
-y_pred = [1 if p > 0.5 else 0 for p in y_pred]
+# y_pred = [1 if p > 0.5 else 0 for p in y_pred]
+y_pred = np.where(y_pred > 0.5, 1, 0)
 
 # Calculate the performance metrics
 print(classification_report(y_test, y_pred))
