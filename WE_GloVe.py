@@ -5,13 +5,13 @@ import os
 import pandas as pd
 import keras
 from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
+from keras.utils.data_utils import pad_sequences
 from keras.models import Sequential
 from keras.layers import Dense, Embedding, LSTM, GlobalMaxPooling1D, Dropout
 from sklearn.model_selection import train_test_split
 
 # Define the path to the directory containing the subdirectories
-path = "C:/Users/E-MaxPCShop/Desktop/corpus_utf8/"
+path = "C:/Users/ulugbek/Desktop/corpus_utf8/"
 
 # Get the list of subdirectories (labels)
 labels = [d for d in os.listdir(path) if os.path.isdir(os.path.join(path, d))]

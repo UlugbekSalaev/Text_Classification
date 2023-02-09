@@ -6,7 +6,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 
 # Define the path to the directory containing the subdirectories
-path = "C:/Users/E-MaxPCShop/Desktop/corpus_utf8"
+path = "C:/Users/ulugbek/Desktop/corpus_utf8/"
 
 # Get the list of subdirectories (labels)
 labels = [d for d in os.listdir(path) if os.path.isdir(os.path.join(path, d))]
@@ -28,6 +28,7 @@ for label in labels:
 num_classes = 15
 y = tf.keras.utils.to_categorical(y, num_classes)
 
+print("Start training")
 # Apply TF-IDF to the texts
 vectorizer = TfidfVectorizer()
 x = vectorizer.fit_transform(texts).toarray()
@@ -53,3 +54,18 @@ test_loss, test_accuracy = model.evaluate(x_test, y_test, verbose=2)
 print("Test loss:", test_loss)
 print("Test accuracy:", test_accuracy)
 print("Dataset N = ", i)
+
+
+
+C:\Users\ulugbek\PycharmProjects\Text_Classification\venv\Scripts\python.exe C:/Users/ulugbek/PycharmProjects/Text_Classification/TF-IDF.py
+Start training
+Traceback (most recent call last):
+  File "C:\Users\ulugbek\PycharmProjects\Text_Classification\TF-IDF.py", line 34, in <module>
+    x = vectorizer.fit_transform(texts).toarray()
+  File "C:\Users\ulugbek\PycharmProjects\Text_Classification\venv\lib\site-packages\scipy\sparse\_compressed.py", line 1051, in toarray
+    out = self._process_toarray_args(order, out)
+  File "C:\Users\ulugbek\PycharmProjects\Text_Classification\venv\lib\site-packages\scipy\sparse\_base.py", line 1298, in _process_toarray_args
+    return np.zeros(self.shape, dtype=self.dtype, order=order)
+numpy.core._exceptions.MemoryError: Unable to allocate 3.71 TiB for an array with shape (512750, 993175) and data type float64
+
+Process finished with exit code 1
