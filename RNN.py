@@ -5,7 +5,7 @@ from tensorflow import keras
 from keras.preprocessing.text import Tokenizer
 from keras.utils.data_utils import pad_sequences
 from sklearn.model_selection import train_test_split
-
+from sklearn.metrics import classification_report
 # Define the path to the directory containing the subdirectories
 path = "C:/Users/E-MaxPCShop/Desktop/corpus_utf8"
 
@@ -52,6 +52,15 @@ model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accur
 
 # Fit the model on the training data
 history = model.fit(x, y, epochs=10, validation_split=0.2, verbose=2)
+
+# Make predictions on the test set
+y_pred = model.predict(x_test)
+
+# Convert the predicted probabilities to class labels
+y_pred = [1 if p > 0.5 else 0 for p in y_pred]
+
+# Calculate the performance metrics
+print(classification_report(y_test, y_pred))
 
 # Evaluate the model on the test data
 test_loss, test_accuracy = model.evaluate(x_test, y_test, verbose=2)
