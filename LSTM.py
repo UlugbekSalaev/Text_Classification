@@ -6,7 +6,7 @@ from keras.utils.data_utils import pad_sequences
 from keras.layers import Embedding, LSTM, Dense
 from keras.models import Sequential
 from sklearn.model_selection import train_test_split
-
+from sklearn.metrics import classification_report
 
 # Define the path to the directory containing the subdirectories
 path = "C:/Users/E-MaxPCShop/Desktop/corpus_utf8"
@@ -53,6 +53,15 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 
 # Train the model
 model.fit(x_train, y_train, epochs=5, batch_size=32)
+
+# Make predictions on the test set
+y_pred = model.predict(x_test)
+
+# Convert the predicted probabilities to class labels
+y_pred = [1 if p > 0.5 else 0 for p in y_pred]
+
+# Calculate the performance metrics
+print(classification_report(y_test, y_pred))
 
 # Evaluate the model on the test data
 test_loss, test_accuracy = model.evaluate(x_test, y_test, verbose=2)
