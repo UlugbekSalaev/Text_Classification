@@ -1,6 +1,6 @@
 # Text classification dataset and analysis for Uzbek language
-Multi-label text classification dataset for Uzbek language and some sourcode for analysis.
-This repository contains the code and dataset used for text classification analysis for the Uzbek language. The dataset consists text data from 9 Uzbek news websites and press portals that included news articles and press releases. These websites were selected to cover various categories such as politics, sports, entertainment, technology, and others. In total, we collected 512,750 articles with over 120 million words accross 15 distinct categories, which provides a large and diverse corpus for text classification. It is worth noting that all the text in the corpus is written in the Latin script.
+Multi-label text classification dataset for Uzbek language and some source code for analysis.
+This repository contains the code and dataset used for text classification analysis for the Uzbek language. The dataset consists text data from 9 Uzbek news websites and press portals that includes news articles and press releases. These websites were selected to cover various categories such as politics, sports, entertainment, technology, and others. In total, we collected 512,750 articles with over 120 million words accross 15 distinct categories, which provides a large and diverse corpus for text classification. It is worth noting that all the text in the corpus is written in the Latin script.
 
 <i>Categories (with the name in Uzbek):</i>
 <ul>
@@ -32,20 +32,20 @@ Based on the model performance results, it can be concluded that the logistic re
 ## Citation
 If you use this or paper in your research, please cite the following paper:
 
-[Kuriyozov Elmurod, Ulugbek Salaev, Sanatbek Matlatipov, & Gayrat Matlatipov. (2023). Text classification dataset and analysis for Uzbek language. 10th Language and Technology Conference: Human Language Technologies as a Challenge for Computer Science and Linguistics (LTC'23), Poznań. Poland.](https://doi.org/10.5281/zenodo.5659638)
+[Kuriyozov Elmurod, Ulugbek Salaev, Sanatbek Matlatipov, & Gayrat Matlatipov. (2023). Text classification dataset and analysis for Uzbek language. 10th Language and Technology Conference: Human Language Technologies as a Challenge for Computer Science and Linguistics (LTC'23), Poznań. Poland.](https://zenodo.org/records/7677431)
 
 ## Cite
 <pre>
 @proceedings{kuriyozov_elmurod_2023_7677431,
-  title        = {{Text classification dataset and analysis for Uzbek 
-                   language}},
-  year         = 2023,
-  publisher    = {Zenodo},
-  month        = feb,
-  doi          = {10.5281/zenodo.7677431},
-  url          = {https://doi.org/10.5281/zenodo.7677431}
+author = {Kuriyozov, Elmurod and Salaev, Ulugbek and Matlatipov, Sanatbek and Matlatipov, Gayrat},
+year = {2023},
+month = {02},
+pages = {141-145},
+source = {LTC 2023 - 10th Language & Technology Conference: Human Language Technologies as a Challenge for Computer Science and Linguistics},
+title = {Text classification dataset and analysis for Uzbek language},
+doi = {10.48550/arXiv.2302.14494}
 }
 </pre>
 
 ## Contact
-For any questions or issues related to the dataset or code, please contact [elmurod1202@urdu.uz, ulugbek.salaev@urdu.uz].
+For any questions or issues related to the dataset or code, please contact [ulugbek.salaev@urdu.uz].
